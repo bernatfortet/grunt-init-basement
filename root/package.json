@@ -1,16 +1,22 @@
 {
-	"name": "name",
-	"version": "0.1.0",
+	"name": "{%= title %}",
+	"version": "0.0.0",
+	"dependencies": {},
 	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-clean": "0.4.0",
+		"grunt-contrib-copy": "~0.4.0",
+		"grunt-contrib-concat": "~0.2.0",
+		"grunt-contrib-connect": "0.3.0",
+		"grunt-contrib-coffee": "~0.6.6",
+		"grunt-contrib-less": "~0.5.0",
+		"grunt-contrib-livereload": "0.1.2",
+		"grunt-contrib-jade": "~0.5.1",
 		"grunt-regarde": "~0.1.1",
-		"grunt-contrib-concat": "~0.1.2",
-		"grunt-contrib-connect": "~0.1.1",
-		"grunt-contrib-coffee": "~0.4.0",
-		"grunt-contrib-clean": "~0.4.0",
-		"grunt-contrib-jade": "~0.4.0",
-		"grunt-contrib-livereload": "~0.1.0",
-		"grunt-contrib-uglify": "~0.1.1",
-		"grunt-contrib-less": "~0.5.0rc7",
-		"grunt": "~0.4.0"
+		"grunt-open": "~0.2.0",
+		"matchdep": "~0.1.2"
+	},
+	"engines": {
+		"node": ">=0.8.0"
 	}
 }

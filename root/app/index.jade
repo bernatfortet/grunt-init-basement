@@ -1,0 +1,50 @@
+!!! 5
+html(lange="en")
+
+	head
+		include meta
+
+		//Favicon
+		link( rel="shortcut icon", href="/favicon.ico")
+		link( rel="apple-touch-icon", href="/apple-touch-icon.png")
+
+		//Css
+		link( rel="stylesheet", media="screen", href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css")
+		link( rel="stylesheet", media="screen", href="styles/main.css")
+
+
+		//RSS TODO
+
+	body.home
+		.container
+			header.page-header
+				h1.logo logo here
+			nav
+				ul.nav.nav-pills
+					li.active
+						a link 1
+					li
+						a link 2
+					li
+						a link 3
+
+			.content
+				.hero-unit
+					h2 Hello
+					p You now have
+					ul
+						li Something 1
+						li Something 2
+					p installed
+					h4 enjoy Coding
+
+			footer
+				p copyright here
+
+		#Scripts
+			script( src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" )
+			script( src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js" )
+
+			script( src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" )
+
+			script( src="scripts/app.js", type"text/javascript")
