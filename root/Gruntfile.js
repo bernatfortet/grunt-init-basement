@@ -19,11 +19,11 @@ module.exports = function (grunt) {
         watch: {
             coffee: {
                 files: ['<%= basement.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
+                tasks: ['coffee:server']
             },
             jade: {
                 files: ["<%= basement.app %>/index.jade"],
-                tasks: ["jade"]
+                tasks: ["jade:server"]
             },
             less: {
                 files: ['<%= basement.app %>/styles/{,*/}*.less'],
