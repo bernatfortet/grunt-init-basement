@@ -22,7 +22,7 @@ module.exports = function (grunt) {
                 tasks: ['coffee:server']
             },
             jade: {
-                files: ["<%= basement.app %>/index.jade"],
+                files: ["<%= basement.app %>/*.jade"],
                 tasks: ["jade:server"]
             },
             less: {
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= basement.app %>/*.html',
-                    '.tmp/index.html',
+                    '.tmp/*.html',
                     '{.tmp,<%= basement.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= basement.app %>}/scripts/{,*/}*.js',
                     '<%= basement.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
@@ -70,8 +70,6 @@ module.exports = function (grunt) {
         coffee: {
             server: {
                 files: [{
-                    // rather than compiling multiple files here you should
-                    // require them into your main .coffee file
                     expand: true,
                     cwd: '<%= basement.app %>/scripts',
                     src: '**/*.coffee',
@@ -93,16 +91,30 @@ module.exports = function (grunt) {
         },
         jade: {
             server: {
-                src: ['<%= basement.app %>/index.jade'],
-                dest: '.tmp/index.html',
+                files: [{
+                    // rather than compiling multiple files here you should
+                    // require them into your main .coffee file
+                    expand: true,
+                    cwd: '<%= basement.app %>',
+                    src: '*.jade',
+                    dest: '.tmp',
+                    ext: '.html'
+                }],
                 options: {
                     client: false,
                     pretty: true
                 }
             },
             dist: {
-                src: ['<%= basement.app %>/index.jade'],
-                dest: '<%= basement.dist %>/index.html',
+                files: [{
+                    // rather than compiling multiple files here you should
+                    // require them into your main .coffee file
+                    expand: true,
+                    cwd: '<%= basement.app %>',
+                    src: '*.jade',
+                    dest: '<%= basement.dist %>',
+                    ext: '.html'
+                }],
                 options: {
                     client: false,
                     pretty: false
@@ -147,15 +159,16 @@ module.exports = function (grunt) {
                     dest: '<%= basement.dist %>',
                     src: [
                         '*.{ico,txt}',
+                        'scripts/**/*.js',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}'
+                        'images/{,*/}*.{webp,gif,jpg,png}'
                     ]
                 }]
             }
         },
     });
 
-	grunt.renameTask('regarde', 'watch');
+    grunt.renameTask('regarde', 'watch');
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
