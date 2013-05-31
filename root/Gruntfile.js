@@ -160,6 +160,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         'scripts/**/*.js',
+                        'styles/fonts*.{eot,svg,ttf,woff}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif,jpg,png}'
                     ]
