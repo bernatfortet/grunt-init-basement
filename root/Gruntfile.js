@@ -194,6 +194,6 @@ module.exports = function (grunt) {
         'copy',
     ]);
 
-    grunt.registerTask('default', ['livereload-start', 'connect', 'watch']);
+    grunt.registerTask('default', ['livereload-start', 'server']);
 
 };
