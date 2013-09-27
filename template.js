@@ -1,5 +1,19 @@
 'use strict';
 
+
+/*
+
+var http = require('http');
+var fs = require('fs');
+
+var file = fs.createWriteStream("test.txt");
+var request = http.get("https://raw.github.com/bernatfortet/grunt-init-basement/master/root/app/styles/style-global.less", function(response) {
+  response.pipe(file);
+});
+*/
+
+
+
 // Basic template description.
 exports.description = 'Create a website basement structure.';
 

@@ -29,15 +29,8 @@ module.exports = function (grunt) {
                 files: ['<%= basement.app %>/styles/{,*/}*.less'],
                 tasks: ['less:server']
             },
-            livereload: {
-                files: [
-                    '<%= basement.app %>/*.html',
-                    '.tmp/*.html',
-                    '{.tmp,<%= basement.app %>}/styles/{,*/}*.css',
-                    '{.tmp,<%= basement.app %>}/scripts/{,*/}*.js',
-                    '<%= basement.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
-                ],
-                tasks: ['livereload']
+            options: {
+				livereload: true,
             }
         },
         connect: {
@@ -169,7 +162,6 @@ module.exports = function (grunt) {
         },
     });
 
-    grunt.renameTask('regarde', 'watch');
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -180,7 +172,6 @@ module.exports = function (grunt) {
             'coffee:server',
             'jade:server',
             'less:server',
-            'livereload-start',
             'connect:livereload',
             'watch'
         ]);
@@ -194,6 +185,6 @@ module.exports = function (grunt) {
         'copy',
     ]);
 
-    grunt.registerTask('default', ['livereload-start', 'server']);
+    grunt.registerTask('default', [ 'server']);
 
 };
