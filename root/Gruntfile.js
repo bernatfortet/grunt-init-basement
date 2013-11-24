@@ -1,5 +1,4 @@
 'use strict';
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
@@ -43,7 +42,7 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function (connect) {
                         return [
-                            lrSnippet,
+                            require('connect-livereload')(),
                             mountFolder(connect, '.tmp'),
                             mountFolder(connect, 'app')
                         ];
