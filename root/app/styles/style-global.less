@@ -97,6 +97,7 @@
 		.ignorecase{ text-transform:none;}
 		.tcenter{ text-align:center;}
 		.hyphen{ -hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto;}
+		.valign{ .rel; top:50%; .trans(translateY(-50%)); }
 
 		// Font stacks
 		@serif: "Georgia", Cambria, "Times New Roman", Times, serif;
@@ -117,6 +118,16 @@
 				 -o-transform: @params;
 				    transform: @params;
 		}
+
+		//Transform Origin
+		.trans-origin(@params){
+			-webkit-transform-origin: @params;
+			   -moz-transform-origin: @params;
+				-ms-transform-origin: @params;
+				 -o-transform-origin: @params;
+				    transform-origin: @params;
+		}
+
 		//Opacity
 		.op( @fade:0.5 ){ @fadePercent: @fade*100;
 			-webkit-opacity: @fade;
