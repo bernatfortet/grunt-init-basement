@@ -152,13 +152,19 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         'scripts/**/*.js',
-                        'styles/fonts*.{eot,svg,ttf,woff}',
+                        'styles/fonts/**',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif,jpg,png}'
+                        'images/{,*/}*.{webp,gif,jpg,png,svg}'
                     ]
                 }]
             }
         },
+        'gh-pages': {
+            options: {
+                base: 'dist'
+            },
+            src: ['**']
+        }
     });
 
     grunt.registerTask('server', function (target) {
@@ -182,6 +188,11 @@ module.exports = function (grunt) {
         'less:dist',
         'jade:dist',
         'copy',
+    ]);
+    
+    grunt.registerTask('deploy', [
+        'build',
+        'gh-pages'
     ]);
 
     grunt.registerTask('default', [ 'server']);
