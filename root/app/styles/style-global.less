@@ -108,6 +108,23 @@
 	//Icons =============================================================
 		.icon-16{ width:16px; height:16px; display:inline-block; background-image:url("../images/sprite.png"); background-repeat:no-repeat; }
 
+		
+	/*****************
+	Flexbox helpers
+	******************/
+	.flex{ display:flex; }
+	.row{ .flex; flex-direction:row; }
+	.column{ .flex; flex-direction:column; }
+	.wrap{ flex-wrap:wrap; }
+	.center{ align-items:center; justify-content:center;}
+	.space-between{ justify-content:space-between;}
+	.space-around{ justify-content:space-around;}
+	.self-center{ align-self:center;}
+	.self-start{ align-self:flex-start;}
+	.self-end{ align-self:flex-end;}
+	.flex1{ .flex; flex:1; }
+
+
 	//FX ===================================================================
 
 		//Transformations

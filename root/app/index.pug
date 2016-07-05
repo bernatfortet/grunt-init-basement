@@ -1,0 +1,38 @@
+doctype html
+html(lange="en")
+
+  head
+    include meta
+
+    //Favicon
+    link( rel="shortcut icon", href="/favicon.ico")
+    link( rel="apple-touch-icon", href="/apple-touch-icon.png")
+
+    link( rel="stylesheet", media="screen", href="styles/main.css")
+
+  body.home
+    #App
+
+    #Scripts
+      script( src="scripts/lib/jquery.min.js" )
+      script( src="scripts/lib/jquery-ui.min.js" )
+      script( src="scripts/lib/handlebars.js" )
+      script( src="scripts/lib/spine/spine.js", type"text/javascript")
+
+      script( src="scripts/lib/jwerty.js", type"text/javascript")
+
+
+      script( src="scripts/controller.js", type"text/javascript")
+      script( src="scripts/app.js", type"text/javascript")
+
+      script( type"text/javascript").
+        $(document).ready(function(){
+          var app = new App({ el: $('#App') })
+          var api = {};
+          var aClass = new aClass;
+        })
+
+
+    #Templates
+      template( id="Template", type="text/x-handlebars-template" )
+        .template Hello, {{name}}!
