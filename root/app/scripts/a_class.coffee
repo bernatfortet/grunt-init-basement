@@ -1,4 +1,4 @@
-class AClass
+class @AClass
   constructor: (val) ->
     #console.log('val')
   
