@@ -123,7 +123,7 @@ module.exports = function (grunt) {
           yuicompress: true
         },
         files: {
-          ".tmp/styles/main.css": "<%= basement.app %>/styles/main.less"
+          ".tmp/styles/styles.css": "<%= basement.app %>/styles/styles.less"
         }
       },
       dist: {
@@ -132,7 +132,7 @@ module.exports = function (grunt) {
           yuicompress: true
         },
         files: {
-          "<%= basement.dist %>/styles/main.css": "<%= basement.app %>/styles/main.less"
+          "<%= basement.dist %>/styles/styles.css": "<%= basement.app %>/styles/styles.less"
         }
       }
     },

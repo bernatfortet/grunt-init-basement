@@ -1,18 +1,26 @@
+- var title = "{%= name %} - Is a new website"
+- var siteName = "{%= name %}"
+- var description = "{%= name %} Description"
+
+
 //Tech Meta
-meta( http-equiv="Content-Type", content="text/html; charset=utf-8" )
-meta( http-equiv="X-UA-Compatible", content="IE=7")
-meta( name="viewport", content="width=device-width, initial-scale=1.0")
+meta( http-equiv="Content-Type" content="text/html; charset=utf-8" )
+meta( http-equiv="X-UA-Compatible" content="IE=7")
+meta( name="viewport" content="width=device-width, initial-scale=1.0")
 
 //Basic Meta
 title {%= name %}
-meta( name="description", content="Searcher Description here")
-meta( name="keywords", content="Keyword1, keyword 2")
+meta( name="description" content="{%= name %} Description")
+meta( name="keywords" content="Keyword1, keyword 2")
   
 //Facebook Meta
-meta( property="og:title",    content="Searcher" )
-meta( property="og:site_name",  content="Searcher" )
-meta( property="og:description", content="Searcher Description here" )
-meta( property="og:image", content="http://websiteAppURL.com/fb-img.jpg" )
-meta( property="og:url", content="http://websiteAppURL.com" )
-meta( property="og:type", content="website" )
-  
+meta( property="og:title"    content=title )
+meta( property="og:site_name"  content=siteName )
+meta( property="og:description" content=description )
+meta( property="og:image" content="http://{%= name %}.com/fb-img.jpg" )
+meta( property="og:url" content="http://{%= name %}.com" )
+meta( property="og:type" content="website" )
+
+//Favicon
+link( rel="shortcut icon" href="/favicon.ico")
+link( rel="apple-touch-icon" href="/apple-touch-icon.png")
