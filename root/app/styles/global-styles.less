@@ -108,36 +108,6 @@
 	//Icons =============================================================
 		.icon-16{ width:16px; height:16px; display:inline-block; background-image:url("../images/sprite.png"); background-repeat:no-repeat; }
 
-
-	/*****************
-	Flexbox helpers
-	******************/
-	.flex{
-    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;      /* TWEENER - IE 10 */
-    display: -webkit-flex;     /* NEW - Chrome */
-    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-   }
-	.row{ .flex; flex-direction:row; }
-	.column{ .flex; flex-direction:column; }
-	.wrap{ flex-wrap:wrap; }
-	.center{ align-items:center; justify-content:center;}
-	.space-between{ justify-content:space-between;}
-	.space-around{ justify-content:space-around;}
-	.self-center{ align-self:center;}
-	.self-start{ align-self:flex-start;}
-	.self-end{ align-self:flex-end;}
-	.flex1{ .flex;
-      -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-      -moz-box-flex: 1;         /* OLD - Firefox 19- */
-      width: 20%;               /* For old syntax, otherwise collapses. */
-      -webkit-flex: 1;          /* Chrome */
-      -ms-flex: 1;              /* IE 10 */
-      flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  }
-
-
 	//FX ===================================================================
 
 		//Transformations
@@ -256,6 +226,10 @@
 			}
 		}
 
+
+//
+
+
 	//Clearfix
 	.clearfix:before, .clearfix:after {  content: "\0020"; display: block; height: 0; visibility: hidden;	 }
 	.clearfix:after { clear: both; }
@@ -347,28 +321,39 @@
 .tac{              text-align:center; }
 .tar{              text-align:right; }
 
+// Cross Compatible Flex
+.flex-display(@display: flex) { display: ~"-webkit-@{display}";  display: ~"-ms-@{display}box";  display: ~"-ms-@{display}";  display: @display;}
+.flex(@columns: initial) { -webkit-flex: @columns; -ms-flex: @columns; flex: @columns;}
+.flex-direction(@direction: row) { -webkit-flex-direction: @direction; -ms-flex-direction: @direction; flex-direction: @direction;}
+.flex-wrap(@wrap: nowrap) { -webkit-flex-wrap: @wrap; -ms-flex-wrap: @wrap; flex-wrap: @wrap;}
+.flex-flow(@flow) { -webkit-flex-flow: @flow; -ms-flex-flow: @flow; flex-flow: @flow;}
+.flex-order(@order: 0) { -webkit-order: @order; -ms-order: @order; order: @order;}
+.flex-grow(@grow: 0) { -webkit-flex-grow: @grow; -ms-flex-grow: @grow; flex-grow: @grow;}
+.flex-shrink(@shrink: 1) { -webkit-flex-shrink: @shrink; -ms-flex-shrink: @shrink; flex-shrink: @shrink;}
+.flex-basis(@width: auto) { -webkit-flex-basis: @width; -ms-flex-basis: @width; flex-basis: @width;}
+.justify-content(@justify: flex-start) { -webkit-justify-content: @justify; -ms-justify-content: @justify; justify-content: @justify;}
+.align-content(@align: stretch) { -webkit-align-content: @align; -ms-align-content: @align; align-content: @align;}
+.align-items(@align: stretch) { -webkit-align-items: @align; -ms-align-items: @align; align-items: @align;}
+.align-self(@align: auto) { -webkit-align-self: @align; -ms-align-self: @align; align-self: @align;}
 
-// Flex
-.flx{              display:flex; }
-.absolute{         position: absolute; display:flex; }
-.flx1{             flex: 1; display:flex; }
-.flx2{             flex: 2; display:flex; }
-.flxCol{           flex-direction: column; display:flex; }
-.flxRow{           flex-direction: row; display:flex; }
-.flxRowReverse{    flex-direction: row-reverse; display:flex; }
-.flxColReverse{    flex-direction: column-reverse; display:flex; }
-.flxWrap{          flex-wrap: wrap; display:flex; }
-.aifs{             align-items: flex-start; display:flex; }
-.aic{              align-items: center; display:flex; }
-.aife{             align-items: flex-end; display:flex; }
-.jcc{              justify-content: center; display:flex; }
-.jcfe{             justify-content: flex-end; display:flex; }
-.jcsb{             justify-content: space-between; display:flex; }
-.jcsa{             justify-content: space-around; display:flex; }
-.asfs{             align-self: flex-start; display:flex; }
-.asfe{             align-self: flex-end; display:flex; }
-.asc{              align-self: center; display:flex; }
-.ass{              align-self: stretch; display:flex; }
+// Flex Tachyons
+.flx{              .flex-display; }
+.flx1{             .flex(1); .flx; }
+.flx2{             .flex(2); .flx; }
+.flxCol{           .flex-direction(column); .flx;}
+.flxRow{           .flex-direction(row); .flx; }
+.flxWrap{          .flex-wrap(wrap); .flx; }
+.aifs{             .align-items(flex-start); .flx; }
+.aic{              .align-items(center);  .flx; }
+.aife{             .align-items(flex-end); .flx; }
+.jcc{              .justify-content(center); .flx; }
+.jcfe{             .justify-content(flex-end); .flx; }
+.jcsb{             .justify-content(space-between); .flx; }
+.jcsa{             .justify-content(space-around); .flx; }
+.asfs{             .align-self(flex-start); .flx; }
+.asfe{             .align-self(flex-end); .flx; }
+.asc{              .align-self(center); .flx; }
+.ass{              .align-self(stretch); .flx; }
 
 
 // Colors
