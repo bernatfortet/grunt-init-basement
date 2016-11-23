@@ -186,7 +186,8 @@ module.exports = function (grunt) {
   
   grunt.registerTask('deploy', [
     'build',
-    'gh-pages'
+    'gh-pages',
+    'server'
   ]);
 
   grunt.registerTask('default', [ 'server']);
