@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         tasks: ['coffee:server']
       },
       pug: {
-        files: ["<%= basement.app %>/*.pug"],
+        files: ["<%= basement.app %>/**/*.pug"],
         tasks: ["pug:server"]
       },
       less: {
