@@ -23,7 +23,7 @@
 
 	//Absolute expansion on parents dimensions
 	.cover-all{ width:100%; height:100%; .abs; left:0; top:0;}
-
+	.size( @size ){ width:@size; height:@size; }
 	.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
 	.rel{ position:relative;}
 	.abs{ position:absolute;}
@@ -78,6 +78,7 @@
 
 		//Default
 		.fs( @size: 1em, @line-height:1, 		@letter-spacing: -0.0)		{ font-size:@size; line-height:@line-height; letter-spacing:@letter-spacing; }
+
 
 		//Custom
 		.fs( 10, 		@line-height:1, 		@letter-spacing: -0.0)		{ font-size:10px; line-height:@line-height; letter-spacing:@letter-spacing; }
