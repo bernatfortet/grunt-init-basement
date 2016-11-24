@@ -155,6 +155,15 @@
 					text-shadow:@params;
 		}
 
+		.textStroke( @width, @color ){
+      .ts( -@width -@width 0 @color,
+            @width -@width 0 @color,
+            -@width @width 0 @color,
+              @width @width 0 @color
+          )
+		}
+
+
 		//Box Shadow -- .bs(0px 0px 4px 0px #ffffff; )
 		.bs( @params){
 			-webkit-box-shadow:@params;
