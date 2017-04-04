@@ -137,7 +137,7 @@ module.exports = function (grunt) {
       }
     },
     imagemin: {                          // Task
-      dynamic: {                         // Another target
+      dist: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
           cwd: 'dist/',                   // Src matches are relative to this path
@@ -157,6 +157,8 @@ module.exports = function (grunt) {
             '*.{ico,txt}',
             'scripts/**/*.js',
             'styles/fonts/**',
+            'CNAME',
+            'sitemap.txt',
             '.htaccess',
             'images/{,*/}*.{webp,gif,jpg,png,svg}'
           ]
@@ -192,8 +194,9 @@ module.exports = function (grunt) {
     'less:dist',
     'pug:dist',
     'copy',
+    'imagemin',
   ]);
-  
+
   grunt.registerTask('deploy', [
     'build',
     'gh-pages',
